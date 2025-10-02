@@ -1,0 +1,340 @@
+:root {
+  --primary-color: #F4C400;   /* أصفر */
+  --dark-color: #2B2B2B;      /* أسود غامق */
+  --light-color: #FFFFFF;     /* أبيض */
+  --gray-color: #EAEAEA;      /* رمادي فاتح */
+
+  --font-arabic: 'Cairo', sans-serif;
+  --font-english: 'Poppins', sans-serif;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-arabic);
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  line-height: 1.6; /* مسافة مريحة بين الأسطر */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-english); /* للإنجليزي لو فيه */
+  margin-bottom: 0.5em; /* مسافة صغيرة تحت العناوين */
+}
+
+p {
+  margin-bottom: 1em; /* مسافة بين الفقرات */
+}
+
+ul, ol {
+  list-style: none; /* إزالة النقاط/الأرقام الافتراضية */
+  padding: 0;
+}
+
+a {
+  text-decoration: none; /* إزالة الخط من اللينكات */
+  color: inherit; /* يخلي اللون حسب مكانه */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* navbar start */
+/* اللوجو النصي (في حالة استخدام كلمة بدل الصورة) */
+
+.navbar{
+    box-shadow: #2b2b2b5a 0px 4px 6px ;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.navbar-brand {
+  font-family: var(--font-arabic);
+  font-size: 1.3rem;
+  color: var(--light-color);
+  
+}
+
+/* اللوجو كصورة */
+.navbar-brand img {
+  max-height: 100%;   /* يخلي الشعار متناسب مع ارتفاع النافبار */
+  width: 100px;
+  /* border: #b58f8f solid 2px;  */
+  border-radius: 5px;
+}
+
+/* الروابط */
+.nav-link {
+  font-family: var(--font-arabic);
+  color: var(--dark-color) !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary-color) !important;
+}
+/* Dropdown Menu */
+.dropdown-menu {
+  background-color: var(--primary-color); /* أبيض */
+  border: 1px solid var(--gray-color);
+  border-radius: 0.4rem;
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* إضافة الظل */
+  margin-top: 0 !important; 
+}
+
+.dropdown-item {
+  font-family: var(--font-arabic);
+  color: var(--dark-color);
+  transition: all 0.3s ease;
+   padding: 0.5rem 1.5rem;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(--light-color); /* أصفر */
+  color: var(--dark-color);
+  outline: 0;
+}
+/* هذا الكود يعمل مع Bootstrap 5 لتمكين الـ Dropdown بالـ Hover */
+.dropdown:hover > .dropdown-menu {
+  display: block;
+  /* يمكنك إضافة تأثيرات انتقال إذا أردت */
+}
+/* إخفاء القائمة عند إزالة التركيز */
+.dropdown > .dropdown-toggle:active {
+  /* لضمان عدم بقاء القائمة مفتوحة بعد النقر على زر */
+  pointer-events: none;
+}
+
+/* navbar end */
+
+/* hero start */
+/* Hero Section */
+.hero-section {
+  background: var(--light-color);
+  padding-top: 5rem;  /* عشان الـ navbar الثابت */
+  margin-top: 5rem;
+}
+
+.hero-subtitle {
+  font-family: var(--font-arabic);
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 2px;
+}
+
+.hero-title {
+  font-family: var(--font-arabic);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark-color);
+}
+
+.hero-text {
+  font-family: var(--font-arabic);
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.custom-btn {
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--dark-color);
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: #e0b200; /* درجة أغمق */
+  color: var(--light-color);
+}
+
+/* فيديو */
+.hero-video video {
+  object-fit: cover;
+  width: 100%;
+  height: 600px;
+  border-radius: 12px;
+}
+
+.video-overlay {
+  background: rgba(0, 0, 0, 0.4);
+}
+.parent{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  
+}
+
+
+.line{
+  width: 70px;
+  height: 2px;
+  background-color: var(--dark-color);
+  margin: 10px 10px;
+}
+#muteToggle {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mute-btn {
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.mute-btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+/* Animation Keyframes */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Classes for animation */
+.animate {
+  opacity: 0;                /* البداية مخفية */
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.animate.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.animate.delay-2 {
+  animation-delay: 0.4s;
+}
+
+.animate.delay-3 {
+  animation-delay: 0.6s;
+}
+/* hero end */
+
+/* About Section start */
+.about-section {
+  background: var(--light-color);
+}
+
+.about-title {
+  font-family: var(--font-arabic);
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--dark-color);
+}
+
+.about-text {
+  font-family: var(--font-arabic);
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+
+/* إحصائيات */
+.stat-box {
+  background: #f8f8f8;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.stat-box:hover .stat-value {
+  color: var(--dark-color);
+}
+
+.progress {
+  background-color: #eaeaea;
+  border-radius: 4px;
+  height: 6px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  background-color: var(--primary-color);
+  width: 0;
+  height: 100%;
+  transition: width 1.5s ease;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  font-family: var(--font-arabic);
+  color: var(--dark-color);
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.animate.delay-1 {
+  animation-delay: 0.3s;
+}
+.animate.delay-2 {
+  animation-delay: 0.5s;
+}
+.animate.delay-3 {
+  animation-delay: 0.7s;
+}
+/* About Section end */
+
